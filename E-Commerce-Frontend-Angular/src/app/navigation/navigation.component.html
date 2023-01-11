@@ -1,0 +1,84 @@
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+     
+        <img class="shopping-bag"  src="assets/images/download.png" alt="..." height="36">
+
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <button skipLocationChange   [routerLink]="['/product'] " class="buttonsidebarclose"  >
+              <fa-icon  class="icon" [icon]="faProductHunt"> </fa-icon> roduct
+            </button>
+            <!-- <a class="nav-link active grab" aria-current="page" skipLocationChange  [routerLink]="['/product']" >Product</a> -->
+          </li>
+   
+      
+          <li>
+          <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>
+              Account
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button *ngIf="!regid || userdata"  skipLocationChange [routerLink]="['/register']" ngbDropdownItem>Register</button>
+              <button  *ngIf="!regid  || userdata"  skipLocationChange [routerLink]="['/login']" ngbDropdownItem>Login</button>
+              <button  (click)="onclick()"  ngbDropdownItem>Logout</button>
+             
+            </div>
+          
+           </div>
+
+           
+          </li>
+          <!-- <li class="nav-item">
+ <h4> reg {{regid}}</h4>
+   
+        </li> -->
+
+       <li class="nav-item" >
+        <button skipLocationChange *ngIf="regid"   [routerLink]="['/viewregistration',regid]"(click)="showvalue(regid)" class="buttonsidebarclose"  >
+          <fa-icon  class="icon" [icon]="faUser"> </fa-icon> Profile
+        </button>
+          
+          </li>
+          
+          <li class="nav-item">
+         
+            <button skipLocationChange *ngIf="regid  ||userdata " [routerLink]="['/addtocart']"  class="buttonsidebarclose" >
+              <fa-icon  class="icon"
+           [icon]="faCartPlus"> </fa-icon> carts
+            </button>
+            <!-- <a skipLocationChange *ngIf="regid  ||userdata " [routerLink]="['/addtocart']"   class="nav-link active grab" href="#">Cart&Checkout</a> -->
+          </li>
+
+          <li class="nav-item">
+         
+            <button skipLocationChange *ngIf="regid  ||userdata " [routerLink]="['/orderitems']"  class="buttonsidebarclose" >
+              <fa-icon  class="icon"
+           [icon]="faShoppingBag"> </fa-icon> Orders
+            </button>
+            <!-- <a skipLocationChange *ngIf="regid  ||userdata " [routerLink]="['/addtocart']"   class="nav-link active grab" href="#">Cart&Checkout</a> -->
+          </li>
+
+          <li class="nav-item" >
+            <button skipLocationChange *ngIf="userdata"  [routerLink]="['/viewgoogleprofile']"  class="buttonsidebarclose"  >
+              <fa-icon  class="icon" [icon]="faUser"> </fa-icon> Profiles
+            </button>
+           
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+ 
+

@@ -1,0 +1,83 @@
+<div class="datepicker">
+  <!-- <h5>Date-{{dateset$ | async |date:'short'}}</h5> -->
+  <!-- <h5>{{date |date:'short'}}</h5> -->
+  <h5>Date-{{dates |date:'short'}}</h5>
+
+
+</div>
+<body>
+
+<div class="productimage" >
+    <div>
+        <img  src="{{productdetail.image}}" alt="" >
+    </div>
+    <div class="productdetails">
+<h1 >{{productdetail.title| uppercase}} </h1>
+<h2>Description</h2>
+<h4 #commentcolor>{{productdetail.description}}</h4>
+<h4 #commentcolor> Category -{{productdetail.category | uppercase}}</h4>
+<div class="d-flex  ">
+    <ngx-stars class="rating-star" [readonly]="true" [maxStars]="5" [initialStars]="productdetail.rating.rate"></ngx-stars>
+
+<h5> {{productdetail.rating.rate}}</h5>
+</div>
+<!-- <h4>⭐⭐⭐⭐⭐ {{productdetail.rating.rate}}</h4> -->
+<h4>People Brought- {{productdetail.rating.count}}</h4>
+<h4 >Price- ₹{{productdetail.price}}</h4> 
+
+
+<button class="btn btn-primary"(click)="gobackpage()">Go Back</button>
+    </div>
+
+</div>
+
+<!-- <div>
+    <a routerLink="comment">company</a>
+    <router-outlet></router-outlet>
+  </div> -->
+
+
+
+<app-comment (eventclick)="getdesiredfilter($event)" [productids]=" productid"></app-comment>
+
+<div class="review-main">
+  <h2>CUSTOMER REVIEWS</h2>
+<div class="shadow round pb-3 classdetails" *ngFor="let getallcom of filtercommentbycategory">
+  
+    <h4 >{{getallcom.name |uppercase}}</h4>
+ <div class="names"> 
+
+       <ngx-stars style="color: gold !important;" class="rating-star" [readonly]="true" [maxStars]="5" [initialStars]="getallcom.rating"></ngx-stars> 
+  
+  <h6 class="rating-value"> {{getallcom.rating}}</h6>
+</div>
+    <!-- <h4 *ngIf="regid==null">Anonymous</h4> -->
+
+
+  <!-- <h5 ngxTruncateText number="220" more="show More" less="show less">{{getallcom.comment}}</h5> -->
+
+<h5    class="comment-styling" appCustomhover>{{getallcom.comment}}</h5>
+</div>
+</div>
+
+
+<div class="review-main">
+
+<div class="shadow round pb-3 classdetails" *ngFor="let productdetai of productdetail.review">
+   
+    <h4>{{productdetai.name |uppercase}}</h4>
+    <div class="rating">
+        <ngx-stars  class="rating-star" [readonly]="true" [maxStars]="5" [initialStars]="productdetai.rate"></ngx-stars> 
+        <h6>{{ productdetai.rate }}</h6>
+        <!-- <p>{{totalproduct}}</p> -->
+      </div>
+    <!-- <h4>⭐⭐⭐⭐⭐ {{productdetai.rate}}</h4> -->
+   
+    <h5 class="comment-styling"  appCustomhover>{{productdetai.comment}}</h5>
+</div>
+<!-- <div class="shadow round pb-3 classdetails"  *ngFor="let item of session">
+  <h4>anonymous</h4>
+  <h5>{{item.comment}}</h5>
+</div> -->
+</div>
+

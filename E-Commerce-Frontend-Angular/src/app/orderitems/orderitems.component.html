@@ -1,0 +1,73 @@
+<body *ngIf="orderitemsfilter!=0">
+  <div class="orderinfo">
+   <h5 class="btn btn-warning">Total items ordered: {{orderitemsfilter.length}}</h5>
+  
+  
+  </div>
+<div class="row">
+    <div class="col-12"></div>
+    <div class="row">
+      <div *ngFor="let cartdetail of orderitemsfilter" class="col-12 cartdetails shadow">
+        <div class="row">
+          <div class="col-3">
+            <img src="{{ cartdetail.image }}" alt="" />
+          </div>
+
+          <div class="col-7 product-details">
+            <h4>₹{{ cartdetail.price }}</h4>
+            <h4
+              style="
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+max-width: 100ch;
+"
+            >
+              {{ cartdetail.title | uppercase }}
+            </h4>
+            <h4
+              style="
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 500ch;
+              "
+            >
+              {{ cartdetail.description }}
+            </h4>
+
+            <h4>Category:{{ cartdetail.category |uppercase}}</h4>
+            <div class="rating">
+            <ngx-stars style="color: gold !important;" class="rating-star" [readonly]="true" [maxStars]="5" [initialStars]="cartdetail.rate"></ngx-stars> 
+            <p>{{ cartdetail.rate }}</p>
+          </div>
+          <h5>Ordered Date: {{ cartdetail.orderdate |date:'short' }}</h5>
+          </div>
+          <!-- <div class="col-2 deleteclass">
+            <fa-icon
+              class="faicon"
+              (click)="deletecartbyid(cartdetail.id)"
+              [icon]="faTrash"
+            ></fa-icon>
+          </div> -->
+        </div>
+      </div>
+      <!-- <h4>People Brought: {{ date |date:'short' }}</h4> -->
+    
+    </div>
+  </div>
+<div class="orderinfo">
+  <button class="btn btn-primary " (click)="gotoproductpage()">PRODUCT PAGE</button>
+
+
+</div>
+  </body>
+  <body class="ifcartemptybody" *ngIf="orderitemsfilter==0">
+    <div class="ifcartempty">
+  <img class="empty-image" src="../../assets/images/empty-cart.png" alt="empty cart">
+  <h5>Your Orders are empty</h5>
+  <button class="btn btn-primary "   (click)="gotoproductpage()">GO TO PRODUCT PAGE</button>
+  
+  
+  </div>
+  </body>

@@ -1,0 +1,61 @@
+.registrationprofilemain{
+    display: flex;
+    padding-bottom: 150px;
+    padding-top: 50px;
+
+    
+}
+
+img{
+// margin-top: 20px;
+    width: 420px;
+    margin-left: 100px;
+    margin-right: 200px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+img:hover{
+
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+
+.profiledetails{
+padding-top: 50px;
+    margin-top: 10px;
+    margin-right: 150px;
+    padding-left: 250px;
+}
+h4{
+    padding-bottom: 20px;
+}
+h1{
+    padding-bottom: 20px;
+}
+h3{
+    padding-bottom: 20px;
+}
+body{
+    background-color: #F3F2EE;
+    margin: 0;
+    position: relative;
+}
+.footer{
+    position: absolute;
+
+width: 100%;
+
+background-color: #E8E8E8;
+}
+h4,h3{
+    font-family:cursive;
+}
+
+.order{
+
+    float: right;
+    padding: 30px;
+}

@@ -1,0 +1,57 @@
+
+<body>
+  <!-- <h1>Log in to your account</h1> -->
+<div class="container pt-5">
+    <div class="row justify-content-sm-center pt-5">
+      <div class="col-sm-6 shadow round pb-3 classdetails">
+        <div  class="googlesigninsuccessfull" *ngIf="user">
+        
+
+     <!-- <div>  <img src="{{ user.photoUrl }}" /></div>
+        
+          <div>
+            <div > <h4>Welcome {{ user.name }}</h4></div>
+           
+          </div> -->
+        </div>
+        <h2 class="text-center pt-3 ">Welcome Back </h2>
+        <h2 class="text-center pt-3 ">Log in to your account </h2>
+        <!-- <h3>{{message}}</h3> -->
+        <h3>{{messagesuccessfull}}</h3>
+        <form [formGroup]="login" (ngSubmit)="submitform()">
+            <div>
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="Enter valid email" />
+                <small   *ngIf="email.invalid && email.touched" class="text-danger">Email is Required</small>
+              </div>
+              <div>
+                <label>password</label>
+                <input type="password" class="form-control" formControlName="password" placeholder="Password is Required" />
+                <small *ngIf="password.invalid && password.touched" class="text-danger">Password is Required</small>
+              </div>
+              
+<div  class="google-login" >
+  <hr>
+<p>sign in</p>
+<asl-google-signin-button  *ngIf="!user" ></asl-google-signin-button> 
+  <hr>
+
+
+</div>
+              <button type="submit"  class="btn btn-success">
+                submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </body>
+  
+
+
+
+
+
+
+
+

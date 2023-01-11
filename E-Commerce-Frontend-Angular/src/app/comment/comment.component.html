@@ -1,0 +1,34 @@
+<div *ngIf="regid"  >
+  <!-- *ngIf="regid"   -->
+ 
+  <form [formGroup]="commentmain" (ngSubmit)="submitform();">
+    
+    <div class="textdescription">
+      <h2>GIVE  FEEDBACK</h2>
+      <div class="rating-slider ">
+        <h4 class="rating-main">RATING</h4>
+            <!-- <ngx-slider class="slidedesign" formControlName="rating" [(value)]="value" [options]="options"></ngx-slider> -->
+            <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
+          </div>
+      <textarea
+ 
+        class="form-control"
+        formControlName="comment"
+        placeholder="write the review about the products"
+      >
+      </textarea>
+  
+    </div>
+    <button   type="submit"  class="btn btn-success reviewbutton">
+      submit</button>
+
+  </form >
+
+ </div>
+
+
+
+
+
+
+  

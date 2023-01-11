@@ -1,0 +1,100 @@
+.productimage{
+    display: flex;
+    margin-top: 30px;
+  padding-bottom: 00px;
+    
+}
+
+img{
+// margin-top: 20px;
+    width: 420px;
+    margin-left: 100px;
+    margin-right: 200px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+img:hover{
+
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+
+.productdetails{
+
+    margin-top: 10px;
+    margin-right: 50px;
+}
+h4{
+    padding-bottom: 20px;
+}
+h1{
+    padding-bottom: 50px;
+}
+h3{
+    padding-bottom: 10px;
+}
+.review-main{
+    margin: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+.classdetails{
+
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+   
+}
+.ngx-stars{
+    width: 10px;
+}
+.rating{
+    display: flex;
+}
+// p{
+//     font-weight: bold;
+//     font-size: 15px;
+// }
+
+
+.rating-main{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.rating-value{
+    margin-left: 10px;
+}
+
+.review-main{
+    margin: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.classdetails{
+
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+   
+}
+.names{
+    display: flex;
+}
+
+h4{
+    padding-bottom: 20px;
+}
+.comment-styling{
+    overflow: hidden;
+     max-height:3.5em;
+     line-height: 1.8em;
+
+
+}
+.datepicker{
+    float: right;
+}

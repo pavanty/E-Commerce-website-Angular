@@ -1,0 +1,56 @@
+.viewprofile{
+    display: flex;
+  
+   padding-bottom: 250px;
+   justify-content: center;
+
+}
+img{
+border-radius: 10px;
+    width: 300px;
+    margin-left: 100px;
+    margin-right: 200px;
+    margin-bottom: 30px;
+    margin-top: 60px;
+ 
+    transition: 0.3s ease-in-out;
+    }
+    
+        
+        img:hover{
+        
+            transition: 0.3s ease-in-out;
+            transform: scale(1.1);
+        }
+        
+        
+        .profiledetails{
+        
+         
+    margin-top: 150px;
+    margin-right: 50px;
+        }
+
+        h4{
+            padding-bottom: 20px;
+        }
+
+        h1{
+            padding-bottom: 50px;
+        }
+        h3{
+            padding-bottom: 80px;
+        }
+
+        body{
+            background-color: #E8E8E8;
+            margin: 0;
+            position: relative;
+        }
+        .footer{
+            position: absolute;
+
+  width: 100%;
+
+   background-color: #E8E8E8;
+        }

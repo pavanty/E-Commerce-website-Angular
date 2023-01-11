@@ -1,0 +1,279 @@
+<!-- <app-navigation [regid]="id"></app-navigation> -->
+<body>
+  <div class="container">
+    <div class="row justify-content-sm-center ">
+      <div class="col-sm-6 shadow round forms-entry detailsinside">
+        <h3 class="text-center pt-3">Get Started With Your Account</h3>
+        <h3 class="text-center pt-3">SIGN-UP</h3>
+        <h3>{{ message }}</h3>
+
+        <form [formGroup]="register" (ngSubmit)="submitform()">
+          <div
+            class="form-group"
+            [class.has-error]="name.invalid && name.touched"
+            [class.has-success]="name.valid"
+          >
+            <label>Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="name"
+              placeholder="Enter valid name"
+            />
+            <small
+              class="help-block"
+              *ngIf="name.invalid && name.touched"
+              class="text-danger"
+              >Name is Required</small
+            >
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              placeholder="Enter valid email"
+            />
+            <small *ngIf="email.invalid && email.touched" class="text-danger"
+              >Email is Required</small
+            >
+          </div>
+          <div>
+            <label>password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              placeholder="Enter valid Password"
+            />
+            <small
+              *ngIf="password.invalid && password.touched"
+              class="text-danger"
+              >Password is Required</small
+            >
+          </div>
+
+          <div>
+            <label>Upload Image</label>
+            <input
+              type="file"
+              class="form-control"
+              formControlName="file"
+              placeholder="Upload Image"
+            />
+            <small *ngIf="file.invalid && file.touched" class="text-danger"
+              >Image Required</small
+            >
+          </div>
+
+          <div>
+            <label>Gender</label>
+            <br />
+            <input type="radio" value="Male" formControlName="gender" />
+            <span>male</span>
+
+            <input type="radio" value="Female" formControlName="gender" />
+            <span>female</span>
+          </div>
+
+          <small *ngIf="name.invalid && name.touched" class="text-danger"
+            >Name is Required</small
+          >
+
+          <div>
+            <label>Date of birth</label>
+            <input type="date" class="form-control" formControlName="date" />
+            <small *ngIf="date.invalid && date.touched" class="text-danger"
+              >Date is Required</small
+            >
+          </div>
+
+          <div>
+            <label>Description</label>
+
+            <textarea
+              class="form-control"
+              formControlName="description"
+              placeholder="Enter Description"
+            >
+            </textarea>
+            <small
+              *ngIf="description.invalid && description.touched"
+              class="text-danger"
+              >Description is Required</small
+            >
+          </div>
+          <div>
+            <label>Occupation</label>
+            <br />
+            <input type="radio" value="Employee" formControlName="occupation" />
+            <span>Employee</span>
+
+            <input type="radio" value="Student" formControlName="occupation" />
+            <span>Student</span>
+
+            <input type="radio" value="Others" formControlName="occupation" />
+            <span>Others</span>
+          </div>
+          <div>
+            <label>Occupation</label>
+
+            <select
+              type="text"
+              placeholder="select occupation"
+              class="form-control"
+              formControlName="occupation"
+            >
+              <option disabled>select occupation</option>
+              <option *ngFor="let occupy of occupations">{{ occupy }}</option>
+            </select>
+          </div>
+          <div>
+            <label>Areas of interest</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="areaofinterest"
+              placeholder="Enter Your Interest"
+            />
+            <small
+              *ngIf="areaofinterest.invalid && areaofinterest.touched"
+              class="text-danger"
+              >Please Enter your Interest</small
+            >
+          </div>
+
+
+          <div>
+            <label>Phone Number</label>
+            <input
+   minlength="10"
+   maxlength="10"
+              type="text"
+              class="form-control"
+              formControlName="phonenumber"
+              placeholder="Enter Your Interest"
+            />
+            <small
+              *ngIf="phonenumber.invalid && phonenumber.touched "
+              class="text-danger"
+              >Please Enter your Phone Number</small
+            >
+          </div>
+          <!-- <div>
+            <label>10th Education Details</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="educationtenth"
+              placeholder="Enter Your 10th Eductaion details"
+            />
+            <small
+              *ngIf="educationtenth.invalid && educationtenth.touched"
+              class="text-danger"
+              >Please Enter the details</small
+            >
+          </div>
+          <div>
+            <label>12th Education Details</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="education12"
+              placeholder="Enter Your 12th Eductaion details"
+            />
+            <small
+              *ngIf="educationdegree.invalid && educationdegree.touched"
+              class="text-danger"
+            >
+              Please Enter the details</small
+            >
+          </div>
+          <div>
+            <label>Degree Education Details</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="educationdegree"
+              placeholder="Enter YourDegree Eductaion details"
+            />
+            <small
+              *ngIf="educationdegree.invalid && educationdegree.touched"
+              class="text-danger"
+              >Please Enter Please Enter the details</small
+            >
+          </div> -->
+
+          <div formArrayName="skills">
+            <label>Add Education Details</label>
+            <div
+              class="formarrayinput"
+              *ngFor="
+                let skill of register.get('skills')['controls'];
+                index as i
+              "
+            >
+              <input
+                placeholder="add education details {{ i + 1 }}"
+                type="text"
+                class="form-control inputField"
+                formControlName="{{ i }}"
+              />
+              <button
+                class="deletebutton"
+                type="button"
+                (click)="onclickdelete(i)"
+              >
+                -
+              </button>
+            </div>
+            <button
+              type="button"
+              (click)="onaddskills()"
+              class="btn btn-sm btn-warning"
+            >
+              +
+            </button>
+          </div>
+
+          <div>
+            <label
+              ><input
+                formControlName="checkbox"
+                required
+                type="checkbox"
+              />Accept terms and conditions</label
+            >
+            <small
+              *ngIf="checkbox.invalid && checkbox.touched"
+              class="text-danger"
+              >Please accept the terms and condition</small
+            >
+          </div>
+          <div>
+          <button 
+            type="submit"
+            
+      
+            class="btn btn-success submit-button"
+          >
+            submit
+          </button>
+
+          <button
+          type="button"
+           (click)="onreset()"
+    
+          class="btn btn-success"
+        >
+         Reset
+        </button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+

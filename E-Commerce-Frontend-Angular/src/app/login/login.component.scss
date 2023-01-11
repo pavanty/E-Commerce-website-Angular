@@ -1,0 +1,106 @@
+
+h1,h2,h3{
+    color:black;
+    text-align: center;
+    font-family:cursive;
+}
+
+label{
+    font-weight: bold;
+    padding: 5px;
+}
+.googlesigninsuccessfull{
+    display: flex;
+    justify-content: center;
+}
+span{
+    padding-right: 17px;
+    padding-left: 5px;
+}
+
+img{
+    border-radius: 50%;
+    width: 60%;
+}
+
+form{
+    // background-color: red;
+    margin: 0px;
+}
+.forms-entry{
+    padding: 50px;
+}
+.checkbox{
+    padding-left: 7px;
+}
+nav{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+button{
+   margin-top: 10px;
+}
+
+.google-login{
+display: flex;
+    justify-content: center;
+    padding-top: 20px;
+
+}
+html,body{
+    background-color: #F3F2EE;   
+    padding-bottom: 10%;
+    background-size: 400% 400%;
+    
+}
+// html,body{
+// background-color: #F9F5F0;
+// padding-bottom: 30%;
+//   background: linear-gradient(-45deg, 	#87CEEB, 		#55a4f4, #23a6d5, #23d5ab);
+//     background-size: 400% 400%;
+//     animation: gradient 30s ease infinite;
+ 
+// }
+
+// @keyframes gradient {
+//     0% {
+//         background-position: 0% 50%;
+//     }
+//     50% {
+//         background-position: 100% 50%;
+//     }
+//     100% {
+//         background-position: 0% 50%;
+//     }
+// }
+
+// h1{
+//     color:white;
+// }
+
+button{
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: bold;
+   
+}
+
+span{
+    font-weight: bold;
+}
+small{
+    font-weight: bold;
+}
+
+
+p{
+    color:black;
+    margin-right: 10px;
+}
+.classdetails{
+    background-color: white;
+}
+hr{
+    width: 250px;
+}

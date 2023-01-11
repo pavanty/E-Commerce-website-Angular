@@ -1,0 +1,63 @@
+.classdetails{
+
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+   
+}
+.review-main{
+    margin: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+textarea{
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  
+}
+.textdescription{
+    // width: 50%;
+    margin-top: 50px;
+    margin-right: 400px;
+    margin-left: 10px;
+}
+.reviewbutton{
+    margin-left: 10px;
+  margin-top: 10px;
+
+}
+.toggleText{
+    color: #e78585 !important;
+	font-size:20px;
+	// font-style: italic;
+}
+h4{
+    padding-bottom: 20px;
+}
+.slidedesign{
+    width: 10%;
+}
+.names{
+    display: flex;
+}
+.rating-slider{
+    display: flex;
+}
+// div.stars {
+//     width: 270px;
+//     display: inline-block;
+//   }
+.rating-main{
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.rating-value{
+    margin-left: 10px;
+}

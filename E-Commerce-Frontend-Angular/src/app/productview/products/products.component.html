@@ -1,0 +1,152 @@
+<body>
+    <div class="row ">
+  
+  
+      <div  *ngIf="!column" class="sidebarview sidebar-main-page col-2 ">
+        <button class="buttonsidebarshow" (click)="showsidebar();filterproducts('')">
+          <fa-icon style="font-size: 30px" [icon]="faList"></fa-icon>
+        </button>
+        <div class="sidebarfirst">
+          
+          <h2>CATEGORIES</h2>
+          <a (click)="filterproducts('electronics')">
+            <h5>ELECTRONICS</h5>
+          </a>
+        
+        </div>
+  
+        <div class="sidebarfirs">
+          <a (click)="filterproducts('jewelery')">
+          
+           
+            <h5>JEWELLERY</h5>
+          </a>
+        
+        </div>
+        <div class="sidebarfirs">
+          <a (click)="filterproducts('men\'s clothing')">
+            <h5>MEN'S CLOTHING</h5>
+          </a>
+        
+        </div>
+        <div class="sidebarfirs">
+          <a (click)="filterproducts('women\'s clothing')">
+            <h5>WOMEN'S CLOTHING</h5>
+          </a>
+        
+        </div>
+        <div class="sidebarfirs">
+          <a (click)="filterproducts('kitchen')">
+            <h5>KITCHEN</h5>
+          </a>
+        
+        </div>
+        <div class="sidebarfirs">
+          <a (click)="filterproducts('furniture')">
+            <h5>FURNITURE</h5>
+          </a>
+        
+        </div>
+        <div class="sidebarfirs">
+          <a (click)="filterproducts('lightning')">
+            <h5>LIGHTNING</h5>
+          </a>
+        
+        </div>
+        <div class="sidebarfirs">
+          <a (click)="filterproducts('')">
+            <h5>CLEAR</h5>
+          </a>
+        
+        </div>
+        
+       
+        <!-- <div class="categoriesbysort">
+          <h4>CATEGORIES</h4>
+        </div> -->
+     </div>
+      <div  *ngIf="column" class="sidebarclose col-2">
+        <button class="buttonsidebarclose" (click)="showsidebar()">
+          <fa-icon style="font-size: 30px" [icon]="faList"></fa-icon>
+        </button>
+  </div>
+  
+      <div class="col-10 main-column-page">
+        <div class="searchbarmain">
+          <label class="searchlabel">Search Item</label>
+  
+          <input class="searchbar" type="text" [(ngModel)]="searchname" />
+          <fa-icon style="font-size: 20px" [icon]="faSearch"></fa-icon>
+         <!-- <h3>{{searchname}}</h3> -->
+        </div>
+        <div class="row details-page">
+          <ng-container
+            *ngFor="
+              let product of filterproductsbycategory | filter : searchname : 'title'
+                | paginate
+                  : {
+                      itemsPerPage: 6,
+                      currentPage: page,
+                      totalitems: totallength
+                    }
+            "
+          >
+            <div class="card col-sm-6 col-md-3">
+              <div (click)="onSelect(product)">
+                <!-- <h1>{{ product.id }}</h1> -->
+  
+                <img src="{{ product.image }}" alt="" />
+                <h5
+                  style="
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 100ch;
+                  "
+                  class="card-title"
+                >
+                  {{ product.title }}
+                </h5>
+  
+                <p
+                  style="
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 100ch;
+                  "
+                  class="card-text"
+                >
+                  {{ product.description }}
+                </p>
+                <p>₹ {{ product.price }}</p>
+                <!-- <p>${{grandtotal | number}}</p> -->
+                <div class="rating">
+                <ngx-stars style="color: gold !important;" class="rating-star" [readonly]="true" [maxStars]="5" [initialStars]="product.rating.rate"></ngx-stars> 
+                <p>{{ product.rating.rate }}</p>
+                <!-- <p>{{totalproduct}}</p> -->
+              </div>
+            </div>
+              <button
+              (click)="addtocartbackend(product)"
+                class="btn btn-success"
+               
+              >
+                Add to cart
+              </button>
+            </div>
+          </ng-container>
+        </div>
+  
+        <pagination-controls
+          class="pagination"
+          (pageChange)="page = $event"
+        ></pagination-controls>
+      </div>
+    </div>
+  </body>
+  
+  <!-- <div class="footer">
+    <app-footer></app-footer>
+  </div> -->
+  

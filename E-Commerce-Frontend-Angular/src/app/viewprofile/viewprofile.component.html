@@ -1,0 +1,40 @@
+<body>
+  <div class="order">
+    <button class="btn btn-primary"(click)="gotoeditprofile()">Edit Profile</button>
+  </div>
+
+
+<div class="registrationprofilemain">
+  <div class="imagemain">
+    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png" alt="">
+
+
+
+</div>
+  <div class="profiledetails">
+
+<h3>Name: {{regdetails.name| uppercase}}</h3>
+<h4>E-Mail: {{regdetails.email}}</h4>
+<h4>Gender: {{regdetails.gender}}</h4>
+<h4>Phone Number: {{regdetails.phonenumber}}</h4>
+<h4>Date of Birth: {{regdetails.date}}</h4>
+<h4>Description: {{regdetails.description}}</h4>
+<h4>Occupation: {{regdetails.occupation}}</h4>
+<h4>Area of Interest: {{regdetails.areaofinterest}}</h4>
+<h4>Education Details: {{regdetails.skills}}</h4>
+<img  src={{regdetails.file}} alt="">
+
+
+<!-- <h3>{{regdetails}}</h3>
+
+<h3>{{regdetails}}</h3>
+<h3>{{regdetails}}</h3> -->
+
+  </div>
+</div>
+
+</body>
+
+<!-- <div class="footer">
+  <app-footer></app-footer>
+  </div> -->

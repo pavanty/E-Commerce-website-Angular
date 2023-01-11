@@ -1,0 +1,150 @@
+
+<body>
+
+      
+      <form>
+ 
+        <div class="container pt-5">
+        <div class="row justify-content-sm-center pt-5 ">
+          <div class="col-sm-6 shadow round pb-3 main-fill ">
+        <fieldset>
+          <h3>Update Details</h3>
+          <h4>{{this.reply}}</h4>
+          <div class="form-group">
+            <label for="email"><span class="req"></span> Email </label>
+            <input
+              class="form-control"
+              type="text"
+              disabled="regdetails.email"
+              [(ngModel)]="regdetails.email" 
+              name="email"
+              id="txt"
+              required
+              placeholder="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="name"><span class="req"></span> Name </label>
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="regdetails.name"
+              name="name"
+              id="txt"
+              required
+              placeholder="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="name"><span class="req"></span> Phone Number </label>
+            <input
+              class="form-control"
+              type="text"
+              minlength="10"
+              maxlength="10"
+              [(ngModel)]="regdetails.phonenumber"
+              name="phonenumber"
+              id="txt"
+              required
+              placeholder="phonenumber"
+            />
+          </div>
+
+          <!-- <div class="form-group">
+            <label for="gender"><span class="req"> </span> Gender </label>
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="regdetails.gender"
+              name="gender"
+              id="txt"
+              required
+              placeholder="Enter valid gender"
+            />
+          </div> -->
+
+
+          <div class="form-group">
+            <label>Gender</label>
+
+            <select   class="form-control"
+            name="gender"
+            type="text"
+              type="text"
+              [(ngModel)]="regdetails.gender"
+              placeholder="select Gender"
+              id="txt"
+        
+            >
+              <option disabled>select Gender</option>
+              <option value ="male" >male</option>
+              <option value ="female" >female</option>
+            </select>
+          </div>
+     
+
+
+
+
+
+
+
+          <div class="form-group">
+            <label for="date"><span class="req"></span> Date </label>
+            <input
+              class="form-control"
+              type="date"
+              [(ngModel)]="regdetails.date"
+              name="date"
+              id="txt"
+              required
+              placeholder="Enter valid Date"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="description"><span class="req"> </span> Description </label>
+            <input
+              class="form-control"
+              required
+              type="text"
+              [(ngModel)]="regdetails.description"
+              name="description"
+              placeholder="Enter description"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="occupation"
+              ><span class="req"> </span> Area of Interest
+            </label>
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="regdetails.areaofinterest"
+              name="areaofinterest"
+              id="txt"
+              required
+              placeholder="Enter valid areaofinterest"
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              class="btn btn-success"
+              type="submit"
+              name="submit_reg"
+              value="Update"
+              (click)="updatecomponent();gotoprofilepage()"
+            />
+           
+   
+          </div>
+
+        </fieldset>
+        </div>
+      </div></div>
+      </form>
+   
+</body>
