@@ -12,5 +12,7 @@ ng serve -o
 --------------------------------------
 #### Steps to run the application in Intellij IDEA(SpringBoot)
 open it in Intellij IDEA
+
 change the database name in application.properties and create the database with the same name in PgAdmin-PostgreSql
+
 Run the application in Intellij IDEA
