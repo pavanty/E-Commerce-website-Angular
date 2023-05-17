@@ -11,7 +11,7 @@ npx json-server --watch db.json
 ng serve -o
 --------------------------------------
 #### Steps to run the application in Intellij IDEA(SpringBoot)
-open it in Intellij IDEA
+open the application in Intellij IDEA
 
 change the database name in application.properties and create the database with the same name in PgAdmin-PostgreSql
 
