@@ -9,6 +9,7 @@ npm install --force
 npx json-server --watch db.json
 
 ng serve -o
+
 --------------------------------------
 #### Steps to run the application in Intellij IDEA(SpringBoot)
 open the application in Intellij IDEA
